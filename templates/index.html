@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fuel Consumption Calculator</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #71C922;
+            font-family: Poppins, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            text-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #444;
+            border-radius: 10px;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            background-color: #666;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #5ABA05;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4C8E12;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fuel Consumption Calculator</h1>
+    <form method="post" action="/calculate">
+        <label for="distance">Distance (in km):</label>
+        <input type="number" id="distance" name="distance" step="0.01" required>
+        <br>
+        <label for="fuel_efficiency">Fuel Efficiency (km/l):</label>
+        <input type="number" id="fuel_efficiency" name="fuel_efficiency" step="0.01" required>
+        <br>
+        <label for="price_per_liter">Price per Liter (in Rs.):</label>
+        <input type="number" id="price_per_liter" name="price_per_liter" step="0.01" required>
+        <br>
+        <input type="submit" value="Calculate">
+    </form>
+
+    {% if result %}
+    <h2>Result:</h2>
+    <p>Fuel Consumed: {{ result }} liters</p>
+    <p>Cost: Rs. {{ cost }}</p>
+    {% endif %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<p style="text-align: center; font-size: 12px; margin-top: 20px; color: #999;">
+        Developed by <b>sagarkvsl@gmail.com</b>. If you have any concerns, please feel free to send an email.
+    </p>
+</body>
+</html>
